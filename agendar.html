@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agenda tu hora de ecografía veterinaria en Santiago. Formulario fácil y rápido. Confirmación en menos de 2 horas.">
+    <title>Agendar Hora - Ecografía Veterinaria Santiago</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans antialiased bg-gradient-to-br from-gray-50 to-blue-50">
+
+<!-- Header -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <a href="index.html" class="text-2xl font-bold text-blue-600">EcografíaVet</a>
+    <a href="index.html" class="text-gray-600 hover:text-gray-900">← Volver al inicio</a>
+  </div>
+</header>
+
+<section class="py-16 md:py-20">
+  <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+    
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        Agenda tu hora de ecografía
+      </h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Completa el formulario y te confirmaremos tu cita en menos de 2 horas
+      </p>
+    </div>
+    
+    <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10 border border-gray-200">
+      
+      <form id="booking-form" class="space-y-8">
+        
+        <!-- PASO 1: Tipo de examen -->
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
+            <h2 class="text-2xl font-bold text-gray-900">Tipo de examen</h2>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-4">
+            
+            <label class="cursor-pointer">
+              <input type="radio" name="exam_type" value="abdominal" class="hidden peer" required>
+              <div class="border-2 border-gray-200 rounded-xl p-6 hover:border-blue-400 peer-checked:border-blue-600 peer-checked:bg-blue-50 transition-all">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-bold text-gray-900 mb-1">Ecografía Abdominal</h3>
+                    <p class="text-sm text-gray-600">Evaluación de órganos abdominales</p>
+                    <p class="text-xs text-blue-600 mt-2 font-semibold">⏱️ Requiere ayuno 8-12h</p>
+                  </div>
+                </div>
+              </div>
+            </label>
+            
+            <label class="cursor-pointer">
+              <input type="radio" name="exam_type" value="cardiaca" class="hidden peer">
+              <div class="border-2 border-gray-200 rounded-xl p-6 hover:border-red-400 peer-checked:border-red-600 peer-checked:bg-red-50 transition-all">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-bold text-gray-900 mb-1">Ecocardiografía Doppler</h3>
+                    <p class="text-sm text-gray-600">Evaluación cardíaca completa</p>
+                    <p class="text-xs text-green-600 mt-2 font-semibold">✅ No requiere ayuno</p>
+                  </div>
+                </div>
+              </div>
+            </label>
+            
+            <label class="cursor-pointer">
+              <input type="radio" name="exam_type" value="reproductiva" class="hidden peer">
+              <div class="border-2 border-gray-200 rounded-xl p-6 hover:border-purple-400 peer-checked:border-purple-600 peer-checked:bg-purple-50 transition-all">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-bold text-gray-900 mb-1">Ecografía Reproductiva</h3>
+                    <p class="text-sm text-gray-600">Gestación, conteo fetal</p>
+                    <p class="text-xs text-green-600 mt-2 font-semibold">✅ No requiere ayuno</p>
+                  </div>
+                </div>
+              </div>
+            </label>
+            
+            <label class="cursor-pointer">
+              <input type="radio" name="exam_type" value="urgencia" class="hidden peer">
+              <div class="border-2 border-gray-200 rounded-xl p-6 hover:border-orange-400 peer-checked:border-orange-600 peer-checked:bg-orange-50 transition-all">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-bold text-gray-900 mb-1">Ecografía de Urgencia</h3>
+                    <p class="text-sm text-gray-600">Casos críticos</p>
+                    <p class="text-xs text-orange-600 mt-2 font-semibold">🚨 Llamar: +56 9 1234 5678</p>
+                  </div>
+                </div>
+              </div>
+            </label>
+            
+          </div>
+        </div>
+        
+        <!-- PASO 2: Información del paciente -->
+        <div class="pt-8 border-t border-gray-200">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">2</div>
+            <h2 class="text-2xl font-bold text-gray-900">Información de tu mascota</h2>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-semibold text-gray-900 mb-2">Nombre de la mascota *</label>
+              <input type="text" name="pet_name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Ej: Luna">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-semibold text-gray-900 mb-2">Especie *</label>
+              <select name="species" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                <option value="">Selecciona...</option>
+                <option value="canino">Perro</option>
+                <option value="felino">Gato</option>
+              </select>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-semibold text-gray-900 mb-2">Peso aproximado (kg) *</label>
+              <input type="number" name="weight" min="0.5" max="100" step="0.1" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Ej: 25.5">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-semibold text-gray-900 mb-2">Sexo *</label>
+              <select name="sex" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                <option value="">Selecciona...</option>
+                <option value="macho">Macho</option>
+                <option value="hembra">Hembra</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <!-- PASO 3: Motivo del examen -->
+        <div class="pt-8 border-t border-gray-200">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">3</div>
+            <h2 class="text-2xl font-bold text-gray-900">Motivo del examen</h2>
+          </div>
+          
+          <div class="space-y-6">
+            <div>
+              <label class="block text-sm font-semibold text-gray-900 mb-2">Motivo principal de la consulta *</label>
+              <textarea name="reason" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none" placeholder="Describe brevemente los síntomas o el motivo por el cual necesitas el examen ecográfico..."></textarea>
+            </div>
+          </div>
+        </div>
+        
+        <!-- PASO 4: Fecha preferida -->
+        <div class="pt-8 border-t border-gray-200">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">4</div>
+            <h2 class="text-2xl font-bold text-gray-900">Fecha y hora preferida</h2>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-semibold text-gray-900 mb-2">Fecha preferida *</label>
+              <input type="date" name="preferred_date" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-semibold text-gray-900 mb-2">Horario preferido *</label>
+              <select name="preferred_time" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                <option value="">Selecciona...</option>
+                <option value="morning">Mañana (9:00 - 13:00)</option>
+                <option value="afternoon">Tarde (14:00 - 19:00)</option>
+                <option value="flexible">Flexible (cualquier horario)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <!-- PASO 5: Tus datos -->
+        <div class="pt-8 border-t border-gray-200">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">5</div>
+            <h2 class="text-2xl font-bold text-gray-900">Tus datos de contacto</h2>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-semibold text-gray-900 mb-2">Nombre completo *</label>
+              <input type="text" name="owner_name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Juan Pérez">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-semibold text-gray-900 mb-2">Email *</label>
+              <input type="email" name="owner_email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="correo@ejemplo.com">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-semibold text-gray-900 mb-2">Teléfono / WhatsApp *</label>
+              <input type="tel" name="owner_phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="+56 9 1234 5678">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Términos -->
+        <div class="pt-8 border-t border-gray-200">
+          <div class="bg-gray-50 rounded-lg p-6">
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" name="accept_terms" required class="w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-1 flex-shrink-0">
+              <div class="text-sm text-gray-700">
+                <p class="font-semibold text-gray-900 mb-1">Acepto los términos y condiciones *</p>
+                <p>He leído y acepto la política de privacidad y el consentimiento informado para la realización del examen ecográfico.</p>
+              </div>
+            </label>
+          </div>
+        </div>
+        
+        <!-- Botón envío -->
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button type="submit" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            Enviar solicitud de hora
+          </button>
+        </div>
+        
+        <p class="text-sm text-gray-600 text-center">
+          Te confirmaremos la cita por email y WhatsApp en menos de 2 horas hábiles
+        </p>
+        
+      </form>
+      
+    </div>
+    
+    <!-- Beneficios -->
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-lg p-6 border border-gray-200 text-center">
+        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="font-bold text-gray-900 mb-2">Confirmación rápida</h3>
+        <p class="text-sm text-gray-600">Respuesta en menos de 2 horas</p>
+      </div>
+      <div class="bg-white rounded-lg p-6 border border-gray-200 text-center">
+        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="font-bold text-gray-900 mb-2">Recordatorios automáticos</h3>
+        <p class="text-sm text-gray-600">Por email y WhatsApp</p>
+      </div>
+      <div class="bg-white rounded-lg p-6 border border-gray-200 text-center">
+        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <h3 class="font-bold text-gray-900 mb-2">Instrucciones personalizadas</h3>
+        <p class="text-sm text-gray-600">Según el examen agendado</p>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<script>
+// Validación fecha mínima
+const dateInput = document.querySelector('input[name="preferred_date"]');
+const today = new Date().toISOString().split('T')[0];
+dateInput.setAttribute('min', today);
+
+// Envío formulario
+document.getElementById('booking-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('¡Solicitud enviada! Te confirmaremos tu hora en menos de 2 horas por email y WhatsApp.');
+  // Aquí iría la integración con backend
+});
+</script>
+
+</body>
+</html>
